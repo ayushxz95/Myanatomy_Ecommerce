@@ -1,0 +1,15 @@
+.add1-container{
+  display: flex;
+  padding:4px;
+  text-align: center;
+  flex-direction: column;
+  height:350px;
+  width:250px;
+  border-radius: 25px;
+  border-color: black;
+  border-style: solid;
+  border-width: medium;
+  background-color:rgb(187, 162, 243);
+  margin-inline: 40%;
+  margin-top: 10%;
+}

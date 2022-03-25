@@ -1,0 +1,11 @@
+.grid-container {
+  margin-top: 50px;
+  display: grid;
+  gap: 50px 100px;
+  padding:10px;
+  grid-template-columns: auto auto auto;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px; */
+}

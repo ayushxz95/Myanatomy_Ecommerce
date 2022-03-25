@@ -1,0 +1,11 @@
+.itemcontainer {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px; */
+    margin-top: 50px;
+    display: grid;
+  gap: 50px 100px;
+  padding:10px;
+  grid-template-columns: auto auto auto;
+  }
