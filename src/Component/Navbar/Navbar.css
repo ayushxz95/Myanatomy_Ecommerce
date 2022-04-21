@@ -1,28 +1,8 @@
-/* .nav {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: xx-large;
-    font-weight:bold;
-    color: black;
-    font-family: "Times New Roman", Times, serif;
-    background-color: aquamarine;
+.nav{
+  position: relative;
+  z-index: 20;
 }
-.add-container {
-    padding:30px;
-    display: flex;
-    float: left;
-    flex-direction: row-reverse;
-}
-.add-container button {
-  color:aliceblue;
-  background-color: black;
-  border-radius: 25px;
-  padding: 10px;
-}
-.add-container button:hover{
-  opacity: 0.7;
-} */
+@media (min-width: 800px) {
 ul {
   list-style-type: none;
   margin: 0;
@@ -45,12 +25,114 @@ li a {
   text-decoration: none;
 }
 .active {
-  color: rgb(187, 162, 243);
+  color: #ef257a;
 }
-/* li a:hover:not(.active) {
+li a:hover{
   background-color: #111;
+  cursor: pointer;
 }
-
-.active {
-  background-color: #04AA6D;
+}
+@media (max-width: 800px) {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: none;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .active {
+    color: #ef257a;
+  }
+  li a:hover{
+    background-color: #111;
+    cursor: pointer;
+  }
+  }
+@media (max-width: 800px){
+  .hamberger-menu-container{
+    display: flex;
+  }
+}
+@media (min-width: 800px) {
+  .hamberger-menu-container{
+    display: none;
+  }
+}
+/* .Add-item{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+}
+.Add-item:hover {
+  background-color: #111;
+  cursor: pointer;
 } */
+@media (max-width: 800px) {
+  
+
+    .search-bar{
+      margin-top: 8px;
+      margin-left: 26px;
+      width: 300px;
+      height:10px;
+      border-radius: 30px;
+      display:none;
+      flex-direction: row;
+      background-color: white;
+      padding: 2px;
+      float: right;
+      margin-right: 38px;
+    }
+  .search-bar > i{
+    padding: 2px;
+    font-size: 20px;
+    color: #777;
+  }
+  .search-bar > input{
+    flex:1;
+    border:none;
+    outline: none;
+  }
+
+}
+@media (min-width: 800px) {
+.search-bar{
+  margin-top: 8px;
+  margin-left: 26px;
+  width: 300px;
+  height:30px;
+  border-radius: 30px;
+  display:flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 4px;
+  float: right;
+  margin-right: 38px;
+}
+.search-bar > i{
+  padding: 2px;
+  font-size: 20px;
+  color: #777;
+}
+.search-bar > input{
+  flex:1;
+  border:none;
+  outline: none;
+}
+}

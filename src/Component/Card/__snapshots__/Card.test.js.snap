@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Card Component Matching Card's snapshot 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-banner"
+  >
+    <p
+      className="category-tag popular"
+    >
+      Electronics
+    </p>
+    <p
+      className="delete-tag popular"
+    >
+      <button
+        className="delete-button"
+        id="btn-card33"
+        onClick={[Function]}
+        title="Delete"
+      >
+        <AiFillDelete
+          color="white"
+          size="14px"
+        />
+      </button>
+    </p>
+    <img
+      alt=""
+      className="banner-img"
+    />
+  </div>
+  <div
+    className="card-body"
+  >
+    <div>
+      <h2
+        className="card-title"
+      >
+        Fan
+      </h2>
+      <h4
+        className="company-name"
+      >
+        Havells
+      </h4>
+    </div>
+    <div
+      className="button-holder"
+    >
+      <Connect(FormDialog)
+        buttonmessage="Update"
+        company="Havells"
+        id={1}
+        message="Update Product"
+        name="Fan"
+        type="Electronics"
+      />
+    </div>
+  </div>
+</div>
+`;

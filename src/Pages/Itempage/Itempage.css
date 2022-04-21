@@ -1,11 +1,84 @@
+.content-container {
+  display: flex;
+  flex-direction: row;
+}
 .itemcontainer {
-    /* display: flex;
+  /* margin-top: 20px; */
+  /* display: grid; */
+  /* gap: 20px 40px; */
+  /* padding:10px; */
+  /* display: flex;
+  flex-wrap: wrap; */
+  /* grid-template-columns: auto auto auto ; */
+      display: grid;
+      grid-gap: 12px;
+      padding: 16px;
+      position: relative;
+
+  }
+  @media (min-width: 600px){
+    .itemcontainer{
+    grid-template-columns: repeat(2,1fr);
+    }
+  }
+  @media (min-width: 960px){
+    .itemcontainer{
+    grid-template-columns: repeat(3,1fr);
+    }
+  }
+  @media (min-width: 1400px){
+    .itemcontainer{
+    grid-template-columns: repeat(4,1fr);
+    }
+  }
+  @media (min-width: 1600px){
+    .itemcontainer{
+    grid-template-columns: repeat(5,1fr);
+    }
+  }
+  .Add-item{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    margin-top: 70px;
+    right: 6px;
+    position: fixed;
+   
+  }
+  .Add-item:hover {
+    /* background-color: gray; */
+    cursor: pointer;
+  }
+  .Add-item-vacant{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    top: 0;
+    position: absolute;
+    right: 0;
+  }
+  .Add-item-vacant:hover {
+    /* background-color: gray; */
+    cursor: pointer;
+  }
+  .emoticon {
+    display: flex;
+    font-weight: bold;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+  .no-item-message {
+    display: flex;
+    font-weight: bold;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+  /* .empty-state {
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 20px; */
-    margin-top: 50px;
-    display: grid;
-  gap: 50px 100px;
-  padding:10px;
-  grid-template-columns: auto auto auto;
+  } */
+  .no-item-container {
+    position: relative;
   }

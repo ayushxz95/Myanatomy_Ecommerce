@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Navbar Component Matching Navbar's snapshot 1`] = `
+<div
+  className="nav"
+>
+  <ul>
+    <li
+      className="hamberger-menu-container"
+    >
+      <Connect(ResNavbar) />
+    </li>
+    <li>
+      <a
+        className="active"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        onClick={[Function]}
+      >
+        Cloths
+      </a>
+    </li>
+    <li>
+      <a
+        onClick={[Function]}
+      >
+        Grocery
+      </a>
+    </li>
+    <li>
+      <a
+        onClick={[Function]}
+      >
+        Electronics
+      </a>
+    </li>
+    <li
+      className="search-bar"
+    >
+      <i>
+        <GoSearch />
+      </i>
+      <input
+        className="search-input"
+        onChange={[Function]}
+        placeholder=" Search..."
+        type="text"
+      />
+    </li>
+  </ul>
+</div>
+`;

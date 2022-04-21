@@ -1,0 +1,36 @@
+.menu-icon {
+    margin-left: 10px;
+    padding: 4px;
+}
+.box{
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none; 
+}
+.box:hover{
+    background-color: rgb(133, 128, 128);
+    cursor: pointer;
+  }
+  .box-search{
+    margin-top: 8px;
+    width: 100px;
+    height:30px;
+    border-radius: 30px;
+    display:flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 4px;
+    margin-left: 10px;
+
+  }
+  .box-search > i{
+    padding: 2px;
+    font-size: 20px;
+    color: #777;
+  }
+  .box-search > input{
+    flex:1;
+    border:none;
+    outline: none;
+  }

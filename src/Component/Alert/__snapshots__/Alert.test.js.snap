@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Alert Component Matching Alert's snapshot 1`] = `
+<div>
+  <ForwardRef(Button)
+    color="error"
+    onClick={[Function]}
+  >
+    Cancel
+  </ForwardRef(Button)>
+  <div
+    className="alert-container"
+  >
+    <ForwardRef(Dialog)
+      onClose={[Function]}
+      open={false}
+    >
+      <ForwardRef(DialogTitle)>
+        Confirm
+      </ForwardRef(DialogTitle)>
+      <ForwardRef(DialogContent)>
+        <ForwardRef(DialogContentText)>
+          Are you sure ? You don't want to save  the changes ?
+        </ForwardRef(DialogContentText)>
+      </ForwardRef(DialogContent)>
+      <ForwardRef(DialogActions)>
+        <ForwardRef(Button)
+          color="error"
+          onClick={[Function]}
+        >
+          Cancel
+        </ForwardRef(Button)>
+        <ForwardRef(Button)
+          color="success"
+          id="btn-alert"
+          onClick={[Function]}
+        >
+          Sure
+        </ForwardRef(Button)>
+      </ForwardRef(DialogActions)>
+    </ForwardRef(Dialog)>
+  </div>
+</div>
+`;

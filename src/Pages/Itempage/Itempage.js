@@ -1,41 +1,87 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchItems } from '../../Redux/Actions/ItemAction';
-import Navbar from '../../Component/Navbar/Navbar';
-import './Itempage.css';
-import Card from '../../Component/Card/Card';
+import React, { Component } from "react";
+import Navbar from "../../Component/Navbar/index";
+import "./Itempage.css";
+import Card from "../../Component/Card/index";
+import PropTypes from "prop-types";
+import { CgSmileSad } from "react-icons/cg";
+import FormDialog from "../../Component/FormDialog/index";
+
+
 
 class Itempage extends Component {
-    componentDidMount() {
-        this.props.fetchItems();
+  constructor(props) {
+    super();
+    this.state = {
+      showModal: false,
+    };
+  }
+  componentDidMount() {
+    // console.log("Hi");
+    this.props.fetchItems();
+  }
+  openModelClickHandler = () => {
+    this.setState({
+      showModal: !this.state.showModal,
+    });
+  };
+  render() {
+    let items = this.props.searchedItems;
+      if (Object.keys(items).length === 0) {
+      return (
+        <div>
+          <Navbar />
+          <div className="no-item-container">
+          <div className="emoticon"><CgSmileSad color="ef257a" size="120px"/></div>
+          <div className="no-item-message">No Item Found</div>
+          <div className="Add-item-vacant">
+                <FormDialog
+                    message={"Add Product"}
+                    buttonmessage={"Add"}
+                    type={""}
+                    company={""}
+                    name={""}
+                    id={""}
+                />
+          </div>
+        </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Navbar />
+          <div className="content-container">
+          <div className="itemcontainer">
+            {Object.keys(items).map((key) => (
+              <Card
+                key={items[key].id}
+                type={items[key].type}
+                name={items[key].name}
+                company={items[key].company}
+                id={items[key].id}
+                image={items[key].image}
+              />
+            ))}
+          </div>
+              <div className="Add-item">
+                <FormDialog
+                    message={"Add Product"}
+                    buttonmessage={"Add"}
+                    type={""}
+                    company={""}
+                    name={""}
+                    id={""}
+                />
+                </div>
+          </div>
+        </div>
+      );
     }
-    render(){
-        const {items} = this.props;
-       return ( 
-           <>
-           <div><Navbar/></div>
-           <div className='itemcontainer'>  
-              {
-                    items.map(item => (
-                    <Card key={item.id} type={item.type} name={item.name} company={item.company} id={item.id}/>
-                    ))
-               }
-            </div>
-            </>
-        );
-     }
-}  
-const mapStateToProps = state => {
-    return {
-        items: state.items.vals,
-        newItem: state.items.val
-    }
+  }
+}
+
+Itempage.propTypes = {
+  fetchItems: PropTypes.func,
 };
-const mapDispatchToProps = dispatch => {
-    return {
-    fetchItems: () => dispatch(fetchItems())
-}};
-  
-export default connect(mapStateToProps, mapDispatchToProps)(Itempage);
 
-
+export default Itempage;

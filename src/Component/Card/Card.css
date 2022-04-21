@@ -1,56 +1,182 @@
-.card {
-  /* display: flex;
-  padding:4px;
-  text-align: center;
-  flex-direction: column;
-  height:250px;
-  width:250px;
-  border-radius: 25px;
-  border-color: black;
-  border-style: solid;
-  border-width: medium;
-  background-color: linear-gradient(red, yellow) */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  height:250px;
-  width:250px;
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-  border-color: black;
-  border-style: solid;
-  border-width: medium;
-  border-radius: 25px;
-}
-/* .card button {
-  color:aliceblue;
-  background-color: black;
-  border-radius: 25px;
-  padding: 10px;
-} */
-.card button:hover{
-  opacity: 0.7;
-}
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+:root {
+  --clr-gray-light: #d7dfe2;
+  --clr-gray-med: #616b74;
+  --clr-gray-dark: #414b56;
+  --clr-link: #4d97b2;
+  --clr-popular: #ef257a;
+  --clr-technology: #651fff;
+  --clr-psychology: #e85808;
 }
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: rgb(187, 162, 243);
-  text-align: center;
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* margin: 2rem; */
+  color: var(--clr-gray-dark);
+}
+.button-holder {
+  float: right;
+  /* border-color: black; */
+  align-items: center;
+}
+/* .button-section {
+    width: 50%;
+  }
+  
+  .buttonssection-button{
+    border: none;
+    outline: none;
+    padding: 12px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    width: 70%;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: white;
+    padding: 1em;
+  }
+  .buttonssection-button :hover{
+    color:#616b74;
+  } */
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0px 2px 20px var(--clr-gray-light);
+  background: white;
+  border-radius: 0.5rem;
+  position: relative;
+  width: 250px;
+  margin: 3.2rem;
   cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+}
+.card-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.card button:hover {
-  opacity: 0.7;
+.card:hover {
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+}
+
+.banner-img {
+  position: absolute;
+  object-fit: cover;
+  height: 14rem;
+  width: 100%;
+}
+
+.category-tag {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  background: red;
+  padding: 0.5rem 1.3rem 0.5rem 1rem;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  border-radius: 0 2rem 2rem 0;
+}
+.delete-tag {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  background: red;
+  padding: 0.5rem 1.3rem 0.5rem 1rem;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 0rem;
+  border-radius: 2rem 0rem 0rem 2rem;
+}
+.delete-button {
+  border: none;
+  background: transparent;
+}
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.popular {
+  background: var(--clr-popular);
+}
+
+.technology {
+  background: var(--clr-technology);
+}
+
+.psychology {
+  background: var(--clr-psychology);
+}
+
+.card-body {
+  margin: 15rem 1rem 1rem 1rem;
+}
+
+*/ .card-title {
+  font-size: small;
+  line-height: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.card-description {
+  color: var(--clr-gray-med);
+  font-size: 0.9rem;
+}
+
+.card-profile {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-profile-info {
+  margin-left: 1rem;
+}
+
+.profile-name {
+  font-size: 1rem;
+}
+
+.profile-followers {
+  color: var(--clr-gray-med);
+  font-size: 0.9rem;
+}
+
+.card-title {
+  color: #ef257a;
+  font-size: large;
+  white-space: nowrap;
+  width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.company-name {
+  font-size: small;
+  white-space: nowrap;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 5px;
 }
