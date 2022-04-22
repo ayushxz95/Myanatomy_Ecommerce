@@ -1,4 +1,3 @@
-import {url} from "../../frontendConfigFile.js";
 import axios from "axios";
 import {
   FETCH_ITEM,
@@ -7,11 +6,12 @@ import {
   SEARCH_ITEM,
   UPDATE_ITEM_SUCCESS,
   RESET_CATEGORY_ITEMS,
+  DELETE_ITEM_SUCCESS,
 } from "./types";
 
 export const fetchItems = () => {
   return (dispatch) => {
-    fetch(url.CRUD_URL.frontend)
+    fetch("http://localhost:3004/Items")
       .then((res) => res.json())
       .then((items) =>
         dispatch({
@@ -39,25 +39,42 @@ export const addItems = (userobj, category) => (dispatch) => {
         category: category,
       },
     })
-    dispatch({
-      type: RESET_CATEGORY_ITEMS,
-    })
-    dispatch({
-      type: FETCH_CATEGORY_ITEM_SUCCESS,
-      payload: category
-    })
+    if(category !== "Home") {
+      dispatch({
+        type: RESET_CATEGORY_ITEMS,
+      })
+      dispatch({
+        type: FETCH_CATEGORY_ITEM_SUCCESS,
+        payload: category
+      })
+    }
   });
 };
 
-export const deleteItem = (id) => (dispatch) => {
-  axios
+export const deleteItem = (id, category) => {
+  return (dispatch) => {
+  return axios
     .delete(`http://localhost:3004/Items/${id}`)
     .then(() => {
-       window.location.reload(false);
+       //window.location.reload(false);
+       dispatch({
+          type: DELETE_ITEM_SUCCESS,
+          payload: id,
+       });
+       if(category !== "Home") {
+        dispatch({
+          type: RESET_CATEGORY_ITEMS,
+        })
+        dispatch({
+          type: FETCH_CATEGORY_ITEM_SUCCESS,
+          payload: category
+        })
+      }
     })
     .catch((error) => {
       console.log(error);
     });
+  };
 };
 
 export const updateItem = (itemData, id, type, category) => {

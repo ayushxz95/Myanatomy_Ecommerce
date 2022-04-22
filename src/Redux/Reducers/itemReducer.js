@@ -5,6 +5,7 @@ import {
   UPDATE_ITEM_SUCCESS,
   SEARCH_ITEM,
   RESET_CATEGORY_ITEMS,
+  DELETE_ITEM_SUCCESS,
 } from "../Actions/types";
 
 // const initialState = {
@@ -154,6 +155,7 @@ export default function(state = initialState, action){
       return {
         ...state,
         allItems: newAllItems,
+        searchedItems: newAllItems,
         cloths: cloths,
         electronics: electronics,
         grocery: grocery,
@@ -235,6 +237,32 @@ export default function(state = initialState, action){
       return {
         ...state,
         searchedItems: searchResult,
+      }
+      case DELETE_ITEM_SUCCESS:{
+        const {allItems, cloths, electronics, grocery} = state;
+        const deletedID = action.payload;
+        const remainingItemKeys = Object.keys(allItems).filter((key) => parseInt(key) !== deletedID);
+        const remainingItems = remainingItemKeys.map((key) => allItems[key])
+        // const remainingItem = allItems.map((parseInt(key)) => remainingItemKey[key])
+        let newCloths = cloths;
+        let newGrocery = grocery;
+        let newElectronics = electronics;
+        if(cloths.includes(deletedID)){
+          newCloths = cloths.filter((id) => id !== deletedID)
+        }else if(grocery.includes(deletedID)){
+          newGrocery = grocery.filter((id) => id !== deletedID)
+        }else if(electronics.includes(deletedID)){
+          newElectronics = electronics.filter((id) => id !== deletedID)
+        }
+        return {
+          ...state,
+          allItems: remainingItems,
+          searchedItems: remainingItems,
+          grocery: newGrocery,
+          electronics: newElectronics,
+          cloths: newCloths,
+        }
+           
       }
     default:
       return {...state}

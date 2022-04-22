@@ -7,7 +7,7 @@ import FormDialog from "../FormDialog/index";
 
 class Card extends Component {
   handleDelete = () => {
-      this.props.deleteItem(this.props.id);
+      this.props.deleteItem(this.props.id, this.props.category);
   }
   render() {
     const { name, type, company, id, image } = this.props;

@@ -1,9 +1,15 @@
 import { deleteItem } from "../../Redux/Actions/ItemAction";
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = (state) => {
     return {
-        deleteItem: (id) => dispatch(deleteItem(id))
+        category: state.category.category,
     }
 }
 
-export {mapDispatchToProps};
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteItem: (id, category) => dispatch(deleteItem(id, category))
+    }
+}
+
+export {mapStateToProps , mapDispatchToProps}; 

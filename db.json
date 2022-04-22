@@ -1,19 +1,44 @@
 {
-  "posts": [
+  "Items": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "open": true,
+      "name": "Mixer",
+      "company": "Bajaj",
+      "type": "Electronics",
+      "image": "https://media.istockphoto.com/photos/electric-fan-with-attached-streamers-picture-id1288565531?s=612x612",
+      "id": 9
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "open": true,
+      "name": "Chole Masala",
+      "company": "Everest",
+      "type": "Grocery",
+      "image": "https://media.istockphoto.com/photos/electric-fan-with-attached-streamers-picture-id1288565531?s=612x612",
+      "id": 13
+    },
+    {
+      "open": true,
+      "name": "tshirt",
+      "company": "Zara",
+      "type": "Cloths",
+      "image": "https://media.istockphoto.com/photos/electric-fan-with-attached-streamers-picture-id1288565531?s=612x612",
+      "id": 15
+    },
+    {
+      "open": true,
+      "name": "Jeans",
+      "company": "Zara",
+      "type": "Cloths",
+      "image": "https://media.istockphoto.com/photos/electric-fan-with-attached-streamers-picture-id1288565531?s=612x612",
+      "id": 18
+    },
+    {
+      "open": true,
+      "name": "Grinder",
+      "company": "Bajaj",
+      "type": "Electronics",
+      "image": "https://media.istockphoto.com/photos/electric-fan-with-attached-streamers-picture-id1288565531?s=612x612",
+      "id": 19
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
